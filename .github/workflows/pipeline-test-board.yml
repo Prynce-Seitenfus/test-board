@@ -22,4 +22,6 @@ jobs:
           ls -l
 
       - name: Run build.sh
-        run: ./build.sh
+        run: | 
+          chmod +x build.sh  
+          ./build.sh          
