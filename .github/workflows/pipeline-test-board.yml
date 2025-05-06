@@ -1,0 +1,26 @@
+name: pipeline-test-board
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    container:
+      image: prynceseitenfus/stm32cubeide:1.18.1
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Show working directory and files
+        run: |
+          echo "GITHUB_WORKSPACE: ${{ github.workspace }}"
+          pwd
+          ls -l
+          ls -l ./test-board
+
+      - name: Run build.sh
+        working-directory: /test-board
+        run: ./build.sh
