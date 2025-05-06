@@ -1,22 +1,23 @@
 #!/bin/bash
 
-# Set the project path
-PROJECT_PATH=$(pwd)/test-board
+# Disable echo for cleaner output
+set +x
 
-# Set the workspace path
-WORKSPACE_PATH=$(pwd)
+# Check if the script is run as root
+CURRENT_PATH=$(pwd)
 
-# Set the STM32CubeIDE executable path
-STM32CUBEIDE_EXECUTABLE=/opt/st/stm32cubeide_1.18.1/stm32cubeide
+# Set the path for STM32CubeIDE
+CUBEIDE_PATH="/opt/st/stm32cubeide_1.18.1"
+export PATH="$CUBEIDE_PATH:$PATH"
 
-# Set the build configuration (e.g. Debug or Release)
-BUILD_CONFIGURATION=Debug
+# Define the workspace and project
+WORKSPACE="../CURRENT_PATH"
+PROJECT="test-board"
+CONFIG="Debug" # "Debug" or "Release" based on your needs
 
-# Set the headless build command
-HEADLESS=--launcher.suppressErrors -nosplash -application org.eclipse.cdt.managedbuilder.core.headlessbuild
+# Use stm32cubeidec to build the project in the specified workspace
+HEADLESS="--launcher.suppressErrors -nosplash -application org.eclipse.cdt.managedbuilder.core>export XDG_RUNTIME_DIR=/tmp
+xvfb-run "$CUBEIDE_PATH/stm32cubeide" -data "$WORKSPACE" $HEADLESS -import "$WORKSPACE/$PROJEC>xvfb-run "$CUBEIDE_PATH/stm32cubeide" -data "$WORKSPACE" $HEADLESS -build "$PROJECT/$CONFIG"   
 
-# Import the workspace using STM32CubeIDE
-$STM32CUBEIDE_EXECUTABLE --launcher.importWorkspace $(pwd)
-
-# Build the project using STM32CubeIDE in headless mode
-$STM32CUBEIDE_EXECUTABLE $HEADLESS -build $PROJECT -data $WORKSPACE_PATH
+# Restore the original PATH (optional, if needed)
+unset CUBEIDE_PATH
