@@ -22,7 +22,7 @@ jobs:
           ls -l
 
       - name: Run build.sh
-        working-directory: /test-board
+        working-directory: '${GITHUB_WORKSPACE}'
         run: | 
           chmod +x build.sh
           ./build.sh
