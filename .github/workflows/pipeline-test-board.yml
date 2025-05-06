@@ -22,5 +22,4 @@ jobs:
           ls -l ./test-board
 
       - name: Run build.sh
-        working-directory: /test-board
         run: ./build.sh
