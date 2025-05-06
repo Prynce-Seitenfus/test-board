@@ -8,7 +8,7 @@ CUBEIDE_PATH="/opt/st/stm32cubeide_1.18.1"
 export PATH="$CUBEIDE_PATH:$PATH"
 
 # Define the workspace and project
-WORKSPACE="/"
+WORKSPACE=$PWD/..
 PROJECT="test-board"
 CONFIG="Release" # or "Debug"
 
