@@ -24,4 +24,4 @@ jobs:
       - name: Run build.sh
         run: | 
           chmod +x build.sh  
-          ./build.sh          
+          ./build.sh -v
