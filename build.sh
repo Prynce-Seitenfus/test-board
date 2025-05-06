@@ -4,7 +4,7 @@
 PROJECT_PATH=$(pwd)/test-board
 
 # Set the STM32CubeIDE executable path
-STM32CUBEIDE_EXECUTABLE=/opt/st/stm32cubeide_1.18.1
+STM32CUBEIDE_EXECUTABLE=/opt/st/stm32cubeide_1.18.1/stm32cubeide
 
 # Set the build configuration (e.g. Debug or Release)
 BUILD_CONFIGURATION=Debug
