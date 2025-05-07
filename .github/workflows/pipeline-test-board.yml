@@ -22,7 +22,7 @@ jobs:
       - name: Install SWT library
         run: |
           apt-get update
-          apt-get install libswt-gtk-4-java
+          apt-get install -y libswt-gtk-4-java
     
       - name: Update java.library.path
         run: |
