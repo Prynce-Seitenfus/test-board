@@ -38,8 +38,3 @@ jobs:
           ls -l
           chmod +x build.sh
           ./build.sh
-
-      - name: Show log file
-        run: |
-          echo "##[debug] ${{ github.workspace }}/.metadata/.log"
-          cat ${{ github.workspace }}/.metadata/.log
