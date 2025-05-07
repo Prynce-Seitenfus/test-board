@@ -33,10 +33,9 @@ jobs:
             ls -l
       
       - name: Run build.sh
-        working-directory: ../
         run: | 
-          chmod +x ./test-board/build.sh
-          ./test-board/build.sh
+          chmod +x build.sh
+          build.sh
 
       - name: Show log file
         run: |
