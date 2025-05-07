@@ -21,8 +21,8 @@ jobs:
 
       - name: Install SWT library
         run: |
-          sudo apt-get update
-          sudo apt-get install libswt-gtk-4-java
+          apt-get update
+          apt-get install -y libswt-gtk-4-java
     
       - name: Update java.library.path
         run: |
