@@ -33,9 +33,12 @@ jobs:
             ls -l
       
       - name: Run build.sh
-        run: | 
-          chmod +x ${{ github.workspace }}/build.sh
-          ${{ github.workspace }}/build.sh
+        run: |
+          pwd
+          ls -all
+          cd test-board
+          chmod +x build.sh
+          ./build.sh
 
       - name: Show log file
         run: |
