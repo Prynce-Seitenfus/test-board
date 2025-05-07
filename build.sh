@@ -13,7 +13,7 @@ PROJECT="test-board"
 CONFIG="Debug" # "Release" or "Debug"
 
 # Use stm32cubeidec to build the project in the specified workspace
-HEADLESS="--launcher.suppressErrors -nosplash -application org.eclipse.cdt.managedbuilder.core
+HEADLESS="--launcher.suppressErrors -nosplash -application org.eclipse.cdt.managedbuilder.core"
 export XDG_RUNTIME_DIR=/tmp
 xvfb-run "$CUBEIDE_PATH/stm32cubeide" -data "$WORKSPACE" $HEADLESS -import "$WORKSPACE/$PROJECT"
 xvfb-run "$CUBEIDE_PATH/stm32cubeide" -data "$WORKSPACE" $HEADLESS -build "$PROJECT/$CONFIG"
