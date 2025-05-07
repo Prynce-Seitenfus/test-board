@@ -21,9 +21,14 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: Run build.sh
         working-directory: ../
         run: | 
           chmod +x ./test-board/build.sh
           ./test-board/build.sh
+
+      - name: Show log file
+        run: |
+          echo "##[debug] /__w/.metadata/.log"
+          cat /__w/.metadata/.log
