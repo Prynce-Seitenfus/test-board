@@ -34,8 +34,8 @@ jobs:
       
       - name: Run build.sh
         run: | 
-          chmod +x build.sh
-          build.sh
+          chmod +x /__w/test-board/build.sh
+          /__w/test-board/build.sh
 
       - name: Show log file
         run: |
