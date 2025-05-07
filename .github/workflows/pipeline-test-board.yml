@@ -17,7 +17,17 @@ jobs:
         run: |
             echo "GITHUB_WORKSPACE: ${{ github.workspace }}"
             pwd
-            ls -l        
+            ls -l
+
+      - name: Install SWT library
+        run: |
+          sudo apt-get update
+          sudo apt-get install libswt-gtk-4-java
+    
+      - name: Update java.library.path
+        run: |
+          export JAVA_LIBRARY_PATH=/usr/lib/jni
+          echo "JAVA_LIBRARY_PATH=$JAVA_LIBRARY_PATH" >> /etc/environment     
 
       - name: Checkout code
         uses: actions/checkout@v4
