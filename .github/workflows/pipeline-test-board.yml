@@ -34,10 +34,10 @@ jobs:
       
       - name: Run build.sh
         run: | 
-          chmod +x /__w/test-board/build.sh
-          /__w/test-board/build.sh
+          chmod +x ${{ github.workspace }}/build.sh
+          ${{ github.workspace }}/build.sh
 
       - name: Show log file
         run: |
-          echo "##[debug] /__w/.metadata/.log"
-          cat /__w/.metadata/.log
+          echo "##[debug] ${{ github.workspace }}/.metadata/.log"
+          cat ${{ github.workspace }}/.metadata/.log
