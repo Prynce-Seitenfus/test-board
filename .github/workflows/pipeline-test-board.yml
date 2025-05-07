@@ -12,25 +12,26 @@ jobs:
       image: prynceseitenfus/stm32cubeide:1.18.1
 
     steps:
+      
+      # - name: Install SWT library
+      #   run: |
+      #     apt-get update
+      #     apt-get install -y libswt-gtk-4-java
+      
+      # - name: Update java.library.path
+      #   run: |
+      #     export JAVA_LIBRARY_PATH=/usr/lib/jni
+      #     echo "JAVA_LIBRARY_PATH=$JAVA_LIBRARY_PATH" >> /etc/environment     
+      
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Show working directory and files
         run: |
             echo "GITHUB_WORKSPACE: ${{ github.workspace }}"
             pwd
             ls -l
-
-      # - name: Install SWT library
-      #   run: |
-      #     apt-get update
-      #     apt-get install -y libswt-gtk-4-java
-    
-      # - name: Update java.library.path
-      #   run: |
-      #     export JAVA_LIBRARY_PATH=/usr/lib/jni
-      #     echo "JAVA_LIBRARY_PATH=$JAVA_LIBRARY_PATH" >> /etc/environment     
-
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+      
       - name: Run build.sh
         working-directory: ../
         run: | 
